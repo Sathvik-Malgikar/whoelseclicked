@@ -24,6 +24,6 @@ socket.on("connect",()=>{
 function increment(){
     console.log("clicked!");
     //ting
-    socket.emit("increment")
+    socket.emit("increment","")
 }
 
