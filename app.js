@@ -70,7 +70,7 @@ app.use((req,resp)=>{
 })
 
 
-server.listen(process.env.PORT  , ()=>{console.log(`listening on port ${process.env.PORT} ...`)})
+server.listen(process.env.PORT || 3000 , ()=>{console.log(`listening on port ${process.env.PORT || 3000} ...`)})
 
 }
 // console.log("this is how it works!")
