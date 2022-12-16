@@ -21,15 +21,21 @@ function socketsinit()
 {
     var count =100;
 
-    iomodule.once("connection",(socket)=>{
-        console.log("user got connected!");
-        iomodule.emit("countdata", count)
+    // iomodule.once("connection",(socket)=>{
+    //     console.log("user got connected!");
+    //     iomodule.emit("countdata", count)
 
-        socket.on("increment",()=>{
-        count++;
-        console.log("count after incrementing ", count );
-        iomodule.emit("countdata", count)
-        })
+    //     socket.on("increment",()=>{
+    //     count++;
+    //     console.log("count after incrementing ", count );
+    //     iomodule.emit("countdata", count)
+    //     })
+    // })
+    iomodule.on("connection",(socket)=>{
+        console.log("user got connected!");
+        socket.emit("welcome", "sathvik !")
+
+
     })
 
 

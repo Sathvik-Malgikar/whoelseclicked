@@ -11,6 +11,10 @@ socket.on("countdata",(count)=>{
     setcount(count)
 })
 
+socket.on("welcome",(count)=>{
+    console.log("Recieved : " + count)
+})
+
 function increment(){
     console.log("clicked!");
     //ting
