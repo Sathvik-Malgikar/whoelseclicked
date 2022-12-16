@@ -13,17 +13,17 @@ socket.on("countdata",(count)=>{
     setcount(count)
 })
 
-socket.on("welcome",(msg)=>{
+socket.once("welcome",(msg)=>{
     console.log("Recieved : " + msg)
 })
 
-socket.on("connect",()=>{
+socket.once("connect",()=>{
     console.log("connected from client side")
 })
 
 function increment(){
     console.log("clicked!");
     //ting
-    socket.emit("increment","")
+    // socket.emit("increment","")
 }
 
