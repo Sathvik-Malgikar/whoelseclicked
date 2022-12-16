@@ -19,7 +19,7 @@ socket.once("welcome",(msg)=>{
     console.log("Recieved : " + msg)
 })
 
-socket.once("connect",()=>{
+socket.on("connect",()=>{
     console.log("connected from client side")
 })
 
