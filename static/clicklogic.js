@@ -14,6 +14,6 @@ socket.on("countdata",(args)=>{
 function increment(){
     console.log("clicked!");
     //ting
-    socket.emit("incrementdata")
+    socket.emit("increment")
 }
 

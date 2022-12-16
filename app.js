@@ -19,7 +19,7 @@ mongoose.connection.once("open",()=>{
 
 function socketsinit()
 {
-    var count =0;
+    var count =100;
 
     iomodule.on("connection",()=>{
         console.log("user got connected!");
