@@ -8,7 +8,6 @@ mongoose.connect("mongodb+srv://mongoadmin:mongoadmin@cluster0.exxx1cv.mongodb.n
 
 mongoose.connection.on("open",()=>{
     console.log("Database connected");
-    app.listen(process.env.PORT || 3000 , ()=>{console.log(`listening on port ${process.env.PORT || 3000} ...`)})
 }).on("error",()=>{
     console.log("db error :(");
 })
@@ -30,6 +29,7 @@ app.use((req,resp)=>{
 })
 
 
+app.listen(process.env.PORT || 3000 , ()=>{console.log(`listening on port ${process.env.PORT || 3000} ...`)})
 
 // console.log("this is how it works!")
 
