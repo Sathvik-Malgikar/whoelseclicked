@@ -19,14 +19,15 @@ mongoose.connection.once("open",()=>{
 
 function socketsinit()
 {
+    var count =0;
+
     iomodule.on("connection",()=>{
         console.log("user got connected!");
-        iomodule.emit("countdata",{"count" : 42})
+        iomodule.emit("countdata",{"count" : count})
     })
 
-    iomodule.on("increment",(c)=>{
-        console.log(c);
-        
+    iomodule.on("increment",()=>{
+    count++;
     })
 
     
