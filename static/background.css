@@ -1,0 +1,29 @@
+body {
+    background-image :url("background.png");
+    background-size :cover;
+    color : yellow;
+    font-size: larger;
+    
+}
+
+span{
+    margin: 2%;
+    margin-top: 2%;
+}
+
+#count {
+    position: absolute;
+    left : 56%;
+    bottom: 10%;
+    font-size: xx-large;
+}
+
+#tapbell{
+
+background-color: rgba(255, 255, 255, 0.068);
+width : 20%;
+height : 34%;
+position: absolute;
+right: 8%;
+top : 26%;
+}
