@@ -1,7 +1,7 @@
 var express = require("express")
 var app = express()
 var server = require("http").Server(app)
-var io = require("socket.io")(server)
+var iomodule = require("socket.io")(server)
 var mongoose = require("mongoose")
 var path = require("path")
 
@@ -11,10 +11,27 @@ mongoose.set('strictQuery', false)
 mongoose.connection.once("open",()=>{
     console.log("\n\nDatabase connected\n\n");
     startserver()
+    socketsinit()
 })
 .on("error",()=>{
     console.log("db error :(");
 })
+
+function socketsinit()
+{
+    iomodule.on("connection",()=>{
+        console.log("user got connected!");
+        iomodule.emit("countdata",{"count" : 42})
+    })
+    var socket = io("https://clear-cowboy-hat-mite.cyclic.app/")
+    socket.on("increment",(c)=>{
+        console.log(c);
+        
+    })
+
+    
+    
+}
 
 
 function startserver()
