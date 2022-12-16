@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
-const io = require("socket.io")(app)
+const server = require("http").Server(app)
+const io = require("socket.io")(server)
 const mongoose = require("mongoose")
 const path = require("path")
 
@@ -35,7 +36,8 @@ app.use((req,resp)=>{
 })
 
 
-app.listen(process.env.PORT || 3000 , ()=>{console.log(`listening on port ${process.env.PORT || 3000} ...`)})
+server.listen(process.env.PORT || 3000 , ()=>{console.log(`listening on port ${process.env.PORT || 3000} ...`)})
+
 }
 // console.log("this is how it works!")
 
