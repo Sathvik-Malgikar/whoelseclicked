@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express()
-const io = require("socket.io").listen(app)
+const io = require("socket.io")(app)
 const mongoose = require("mongoose")
 const path = require("path")
 
