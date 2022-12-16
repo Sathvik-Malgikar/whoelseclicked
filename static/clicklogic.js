@@ -6,9 +6,9 @@ function setcount(v){
     counter.value =v
 } 
 
-socket.on("countdata",(args)=>{
-    console.log(args);
-    setcount(args)
+socket.on("countdata",(count)=>{
+    console.log(count);
+    setcount(count)
 })
 
 function increment(){
