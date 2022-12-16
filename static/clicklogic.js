@@ -23,6 +23,10 @@ socket.on("connect",()=>{
     console.log("connected from client side")
 })
 
+socket.on("error",()=>{
+    console.log("error")
+})
+
 
  function increment(){
     console.log("clicked!");
