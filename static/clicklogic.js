@@ -1,5 +1,6 @@
 
-var socket = io("https://clear-cowboy-hat-mite.cyclic.app/")
+var socket = io()
+
 socket.on("countdata",(args)=>{
     console.log(args);
 })

@@ -23,8 +23,8 @@ function socketsinit()
         console.log("user got connected!");
         iomodule.emit("countdata",{"count" : 42})
     })
-    var socket = io("https://clear-cowboy-hat-mite.cyclic.app/")
-    socket.on("increment",(c)=>{
+
+    iomodule.on("increment",(c)=>{
         console.log(c);
         
     })
