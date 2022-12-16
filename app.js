@@ -6,8 +6,8 @@ const path = require("path")
 
 mongoose.connect("mongodb+srv://mongoadmin:mongoadmin@cluster0.exxx1cv.mongodb.net/sathvik?retryWrites=true&w=majority")
 
-mongoose.connection.on("open",()=>{
-    console.log("Database connected");
+mongoose.connection.on("connected",()=>{
+    console.log("\n\nDatabase connected\n\n");
 }).on("error",()=>{
     console.log("db error :(");
 })
