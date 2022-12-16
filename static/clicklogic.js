@@ -8,7 +8,7 @@ function setcount(v){
 
 socket.on("countdata",(args)=>{
     console.log(args);
-    setcount(args.count)
+    setcount(args)
 })
 
 function increment(){

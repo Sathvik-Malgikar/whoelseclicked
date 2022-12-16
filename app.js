@@ -21,16 +21,16 @@ function socketsinit()
 {
     var count =100;
 
-    iomodule.on("connection",()=>{
+    iomodule.on("connection",(socket)=>{
         console.log("user got connected!");
-        iomodule.emit("countdata",{"count" : count})
+        iomodule.emit("countdata", count)
+
+        socket.on("increment",()=>{
+        count++;
+        })
     })
 
-    iomodule.on("increment",()=>{
-    count++;
-    })
 
-    
     
 }
 
