@@ -1,18 +1,24 @@
 
 var socket = io()
 
-counter = document.getElementById("count")
+let counter = document.getElementById("count")
 function setcount(v){
-    counter.value =v
+    console.log(v);
+    counter.textContent =v
+ 
 } 
 
 socket.on("countdata",(count)=>{
-    console.log(count);
+   
     setcount(count)
 })
 
-socket.on("welcome",(count)=>{
-    console.log("Recieved : " + count)
+socket.on("welcome",(msg)=>{
+    console.log("Recieved : " + msg)
+})
+
+socket.on("connect",()=>{
+    console.log("connected from client side")
 })
 
 function increment(){
